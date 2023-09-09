@@ -1,0 +1,14 @@
+Sprite2D
+TextureRect
+ColorRect
+Node2D
+Node
+ReferenceRect
+CollisionShape2D
+Area2D
+RichTextLabel
+Timer
+Label
+AudioStreamPlayer
+Marker2D
+CollisionPolygon2D
