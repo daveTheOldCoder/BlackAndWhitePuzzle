@@ -1,0 +1,26 @@
+# Sources for assets:
+
+# https://gamesounds.xyz/Sonniss.com%20-%20Game%20Audio%20Monthly%20-%206/SoundHolder%20-%20%20Retro%20Games/8bit_sfx_30.wav
+#   From: https://gamesounds.xyz/?dir=Sonniss.com%20-%20Game%20Audio%20Monthly%20-%206/SoundHolder%20-%20%20Retro%20Games
+#   Converted using soundconverter to 8bit_sfx_30.ogg
+#
+# License for the above:
+#	https://gamesounds.xyz/Sonniss.com%20-%20GDC%202018%20-%20Game%20Audio%20Bundle/License.pdf
+#		Summary: Free for any use without attribution. See License.pdf for details.
+
+# https://soundimage.org/puzzle-music/
+#	Mysterious-Puzzle_Looping.mp3 (renamed to mysterious-puzzle_looping.mp3)
+# License for the above:
+#	Requires attribution on credits screen. See https://soundimage.org/ for details.
+
+# https://fonts.google.com/icons
+# https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Asentiment_satisfied%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
+# https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Asentiment_dissatisfied%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
+# https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Avolume_up%3A
+# https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Avolume_off%3A
+# 
+# License for the above:
+#   Google Fonts is a library of 1052 free licensed font families and APIs for conveniently using the fonts via CSS and Android.
+#   We also provide delightful, beautifully crafted icons for common actions and items.
+#   Download them for use in your digital products for Android, iOS, and web.
+

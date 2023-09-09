@@ -1,0 +1,745 @@
+[gd_scene load_steps=58 format=3 uid="uid://ya5t084480ck"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_yhxkk"]
+[ext_resource type="Texture2D" uid="uid://tc701wpfumjm" path="res://assets/plus_cursor_black.png" id="2_c46vb"]
+[ext_resource type="Script" path="res://cursor.gd" id="2_ne4y1"]
+[ext_resource type="Texture2D" uid="uid://ci7m8p2kkrok" path="res://assets/plus_cursor_white.png" id="3_cj7r5"]
+[ext_resource type="Script" path="res://solid_box.gd" id="5_gljnp"]
+[ext_resource type="Texture2D" uid="uid://cg4jghcxdm8uq" path="res://assets/sentiment_satisfied_FILL0_wght400_GRAD0_opsz48.png" id="6_7ftgo"]
+[ext_resource type="Script" path="res://hollow_box.gd" id="6_jvjiq"]
+[ext_resource type="Script" path="res://closeable_box.gd" id="7_w1dm5"]
+[ext_resource type="AudioStream" uid="uid://c15gpr0xwnxy5" path="res://assets/8bit_sfx_30.ogg" id="9_45bkh"]
+[ext_resource type="Script" path="res://trophy_sound.gd" id="10_e5txq"]
+[ext_resource type="Script" path="res://volume_slider.gd" id="10_ewhtw"]
+[ext_resource type="Texture2D" uid="uid://7tswvsmgn48d" path="res://assets/volume_up_white_24dp.svg" id="10_vcitq"]
+[ext_resource type="Texture2D" uid="uid://dk0ccadsnjyyg" path="res://assets/replay_26x32.png" id="12_vvevf"]
+[ext_resource type="Texture2D" uid="uid://n8m3gfasqg43" path="res://assets/hollow_triangle_128x128.png" id="15_61lvk"]
+[ext_resource type="Texture2D" uid="uid://c8igfm4wi5708" path="res://assets/0.png" id="15_cttjb"]
+[ext_resource type="Script" path="res://elapsed_time.gd" id="15_i7let"]
+[ext_resource type="Script" path="res://trophy.gd" id="16_eu7eu"]
+[ext_resource type="Texture2D" uid="uid://ckt77xexllg1q" path="res://assets/hollow_square_128x128.png" id="16_mctqe"]
+[ext_resource type="Texture2D" uid="uid://cwu1gltydvu8s" path="res://assets/1.png" id="16_ru388"]
+[ext_resource type="Texture2D" uid="uid://cvov4uucuu0a8" path="res://assets/2.png" id="17_3fyhu"]
+[ext_resource type="Texture2D" uid="uid://mlmxrdbqw36c" path="res://assets/hollow_pentagon_128x128.png" id="17_m2cia"]
+[ext_resource type="Script" path="res://solid_shape.gd" id="18_7i3qu"]
+[ext_resource type="Texture2D" uid="uid://pw5l8oe2qm7" path="res://assets/3.png" id="18_s33uy"]
+[ext_resource type="Texture2D" uid="uid://s5h7ha6g04mw" path="res://assets/solid_triangle_42x42.png" id="18_svvet"]
+[ext_resource type="Texture2D" uid="uid://d6s35k4q5gk4" path="res://assets/solid_square_42x42.png" id="19_c8ikv"]
+[ext_resource type="Texture2D" uid="uid://6f6bo54oom0e" path="res://assets/4.png" id="19_mtqmu"]
+[ext_resource type="Texture2D" uid="uid://t5ino2y1aw7x" path="res://assets/solid_pentagon_42x42.png" id="20_m11gl"]
+[ext_resource type="Texture2D" uid="uid://oi426b6rt0vv" path="res://assets/5.png" id="20_qe1iw"]
+[ext_resource type="Texture2D" uid="uid://bm8dn1c01pmdq" path="res://assets/6.png" id="21_d43ej"]
+[ext_resource type="Texture2D" uid="uid://iyuxf5gm1p1c" path="res://assets/7.png" id="22_abjge"]
+[ext_resource type="Script" path="res://music.gd" id="23_etdi4"]
+[ext_resource type="Texture2D" uid="uid://d1u8ylpjowhuy" path="res://assets/8.png" id="23_hw4xk"]
+[ext_resource type="AudioStream" uid="uid://cw73qpsfvjw1j" path="res://assets/mysterious-puzzle_looping.mp3" id="23_ynj3r"]
+[ext_resource type="Texture2D" uid="uid://bhusvrp6cbc2g" path="res://assets/9.png" id="24_1a5wk"]
+[ext_resource type="Script" path="res://credits.gd" id="25_mlufd"]
+[ext_resource type="Texture2D" uid="uid://c2iyhbk80hljx" path="res://assets/white_rectangle_530x500.png" id="25_uechw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eprl7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c46vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cj7r5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja830"]
+size = Vector2(33, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiv48"]
+size = Vector2(64, 64)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwrm1"]
+size = Vector3(64, 64, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqgwy"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grfht"]
+size = Vector2(96, 96)
+
+[sub_resource type="QuadMesh" id="QuadMesh_hmguo"]
+size = Vector2(96, 96)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ddhva"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6tnka"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7srjk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uobtp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_m73p5"]
+material = SubResource("StandardMaterial3D_uobtp")
+size = Vector3(96, 5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3i1x"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1pje"]
+size = Vector2(10, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fldd"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s88o"]
+size = Vector2(10, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krorx"]
+size = Vector2(42, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efvmc"]
+size = Vector2(43, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bytoe"]
+size = Vector2(42, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4ldo"]
+size = Vector2(42, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0rj1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_yhxkk")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 630.0
+offset_bottom = 500.0
+color = Color(0, 0, 0, 1)
+
+[node name="GameArea" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_top = -3.0
+offset_right = 530.0
+offset_bottom = 497.0
+
+[node name="Cursor" type="AnimatedSprite2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(76, 203)
+sprite_frames = SubResource("SpriteFrames_eprl7")
+autoplay = "default"
+script = ExtResource("2_ne4y1")
+
+[node name="Area2D" type="Area2D" parent="GameArea/Cursor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/Cursor/Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ja830")
+
+[node name="Up" type="ReferenceRect" parent="GameArea/Cursor"]
+offset_left = -11.0
+offset_top = -48.0
+offset_right = 11.0
+offset_bottom = -11.0
+
+[node name="Left" type="ReferenceRect" parent="GameArea/Cursor"]
+offset_left = -51.0
+offset_top = -11.0
+offset_right = -11.0
+offset_bottom = 10.0
+
+[node name="Down" type="ReferenceRect" parent="GameArea/Cursor"]
+offset_left = -10.0
+offset_top = 11.0
+offset_right = 12.0
+offset_bottom = 48.0
+
+[node name="Right" type="ReferenceRect" parent="GameArea/Cursor"]
+offset_left = 12.0
+offset_top = -10.0
+offset_right = 52.0
+offset_bottom = 11.0
+
+[node name="SolidBox" type="Area2D" parent="GameArea"]
+unique_name_in_owner = true
+position = Vector2(443, 419)
+script = ExtResource("5_gljnp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/SolidBox"]
+shape = SubResource("RectangleShape2D_tiv48")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/SolidBox"]
+mesh = SubResource("BoxMesh_nwrm1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GameArea/SolidBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/SolidBox/StaticBody2D"]
+shape = SubResource("RectangleShape2D_wqgwy")
+
+[node name="HollowBox" type="Area2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(355, 128)
+collision_layer = 2
+script = ExtResource("6_jvjiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/HollowBox"]
+shape = SubResource("RectangleShape2D_grfht")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/HollowBox"]
+mesh = SubResource("QuadMesh_hmguo")
+
+[node name="CloseableBox" type="Node2D" parent="GameArea"]
+unique_name_in_owner = true
+position = Vector2(261, 205)
+script = ExtResource("7_w1dm5")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/CloseableBox"]
+offset_left = -48.0
+offset_right = 46.0
+offset_bottom = 96.0
+
+[node name="Handle" type="Area2D" parent="GameArea/CloseableBox"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/CloseableBox/Handle"]
+material = SubResource("CanvasItemMaterial_ddhva")
+position = Vector2(-52, -2)
+mesh = SubResource("SphereMesh_6tnka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/CloseableBox/Handle"]
+position = Vector2(-52, -2)
+shape = SubResource("CircleShape2D_7srjk")
+
+[node name="Top" type="Node2D" parent="GameArea/CloseableBox"]
+position = Vector2(-46, 0)
+
+[node name="Area2D" type="Area2D" parent="GameArea/CloseableBox/Top"]
+position = Vector2(46, 0)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/CloseableBox/Top/Area2D"]
+mesh = SubResource("BoxMesh_m73p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/CloseableBox/Top/Area2D"]
+shape = SubResource("RectangleShape2D_y3i1x")
+
+[node name="Left" type="Area2D" parent="GameArea/CloseableBox"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/CloseableBox/Left"]
+position = Vector2(-48, 48)
+rotation = 1.5708
+mesh = SubResource("BoxMesh_m73p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/CloseableBox/Left"]
+position = Vector2(-48, 47.5)
+shape = SubResource("RectangleShape2D_q1pje")
+
+[node name="Bottom" type="Area2D" parent="GameArea/CloseableBox"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/CloseableBox/Bottom"]
+position = Vector2(0, 96)
+mesh = SubResource("BoxMesh_m73p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/CloseableBox/Bottom"]
+position = Vector2(0, 96)
+shape = SubResource("RectangleShape2D_1fldd")
+
+[node name="Right" type="Area2D" parent="GameArea/CloseableBox"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="GameArea/CloseableBox/Right"]
+position = Vector2(46, 48)
+rotation = 1.5708
+mesh = SubResource("BoxMesh_m73p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/CloseableBox/Right"]
+position = Vector2(46, 48)
+shape = SubResource("RectangleShape2D_1s88o")
+
+[node name="HollowTriangle" type="Sprite2D" parent="GameArea"]
+visible = false
+position = Vector2(400, 100)
+texture = ExtResource("15_61lvk")
+
+[node name="HollowSquare" type="Sprite2D" parent="GameArea"]
+visible = false
+position = Vector2(400, 250)
+texture = ExtResource("16_mctqe")
+
+[node name="HollowPentagon" type="Sprite2D" parent="GameArea"]
+visible = false
+position = Vector2(400, 400)
+texture = ExtResource("17_m2cia")
+
+[node name="SolidTriangle" type="Area2D" parent="GameArea"]
+visible = false
+position = Vector2(100, 100)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/SolidTriangle"]
+texture = ExtResource("18_svvet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/SolidTriangle"]
+shape = SubResource("RectangleShape2D_krorx")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/SolidTriangle"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="SolidSquare" type="Area2D" parent="GameArea"]
+visible = false
+position = Vector2(100, 250)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/SolidSquare"]
+texture = ExtResource("19_c8ikv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/SolidSquare"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_efvmc")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/SolidSquare"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="SolidPentagon" type="Area2D" parent="GameArea"]
+visible = false
+position = Vector2(100, 400)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/SolidPentagon"]
+texture = ExtResource("20_m11gl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/SolidPentagon"]
+shape = SubResource("RectangleShape2D_bytoe")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/SolidPentagon"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="CursorInitial" type="Marker2D" parent="GameArea"]
+unique_name_in_owner = true
+position = Vector2(88, 99)
+
+[node name="CursorSolveEquation" type="Marker2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(320, 219)
+
+[node name="CursorMatchShapes" type="Marker2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(224, 243)
+
+[node name="MoveableDigits" type="Node2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+
+[node name="0" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(64, 320)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/0"]
+texture = ExtResource("15_cttjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/0"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/0"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="1" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(164, 320)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/1"]
+texture = ExtResource("16_ru388")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/1"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/1"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="2" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(264, 320)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/2"]
+texture = ExtResource("17_3fyhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/2"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/2"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="3" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(364, 320)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/3"]
+texture = ExtResource("18_s33uy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/3"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/3"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="4" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(464, 320)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/4"]
+texture = ExtResource("19_mtqmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/4"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/4"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="5" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(64, 448)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/5"]
+texture = ExtResource("20_qe1iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/5"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/5"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="6" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(164, 448)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/6"]
+texture = ExtResource("21_d43ej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/6"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/6"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="7" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(264, 448)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/7"]
+texture = ExtResource("22_abjge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/7"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/7"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="8" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(364, 448)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/8"]
+texture = ExtResource("23_hw4xk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/8"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/8"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="9" type="Area2D" parent="GameArea/MoveableDigits"]
+position = Vector2(464, 448)
+script = ExtResource("18_7i3qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameArea/MoveableDigits/9"]
+texture = ExtResource("24_1a5wk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/MoveableDigits/9"]
+shape = SubResource("RectangleShape2D_d4ldo")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="GameArea/MoveableDigits/9"]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+
+[node name="DigitContainers" type="Node2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+
+[node name="A" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(80, 56)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/A"]
+scale = Vector2(2, 2)
+texture = ExtResource("16_ru388")
+
+[node name="B" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(240, 56)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/B"]
+scale = Vector2(2, 2)
+texture = ExtResource("17_3fyhu")
+
+[node name="C" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(400, 56)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/C"]
+scale = Vector2(2, 2)
+texture = ExtResource("18_s33uy")
+
+[node name="D" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(80, 136)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/D"]
+scale = Vector2(2, 2)
+texture = ExtResource("17_3fyhu")
+
+[node name="E" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(240, 136)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/E"]
+scale = Vector2(2, 2)
+texture = ExtResource("19_mtqmu")
+
+[node name="F" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(400, 136)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/F"]
+scale = Vector2(2, 2)
+texture = ExtResource("21_d43ej")
+
+[node name="G" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(80, 216)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/G"]
+scale = Vector2(2, 2)
+texture = ExtResource("18_s33uy")
+
+[node name="H" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(240, 216)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Digit" type="Sprite2D" parent="GameArea/DigitContainers/H"]
+scale = Vector2(2, 2)
+texture = ExtResource("21_d43ej")
+
+[node name="I" type="Sprite2D" parent="GameArea/DigitContainers"]
+position = Vector2(400, 216)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_mctqe")
+
+[node name="Transition" type="Sprite2D" parent="GameArea"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(264, 251)
+texture = ExtResource("25_uechw")
+
+[node name="UI" type="Panel" parent="."]
+offset_left = 530.0
+offset_right = 630.0
+offset_bottom = 500.0
+
+[node name="Trophy1" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(36, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_7ftgo")
+script = ExtResource("16_eu7eu")
+
+[node name="Trophy2" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(36, 82)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_7ftgo")
+script = ExtResource("16_eu7eu")
+
+[node name="Trophy3" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(36, 132)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_7ftgo")
+script = ExtResource("16_eu7eu")
+
+[node name="Trophy4" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(36, 182)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_7ftgo")
+script = ExtResource("16_eu7eu")
+
+[node name="Trophy5" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(36, 232)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_7ftgo")
+script = ExtResource("16_eu7eu")
+
+[node name="Trophy6" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(36, 282)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_7ftgo")
+script = ExtResource("16_eu7eu")
+
+[node name="GameOver" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-256, 242)
+scale = Vector2(7, 7)
+texture = ExtResource("6_7ftgo")
+
+[node name="TrophySound" type="AudioStreamPlayer2D" parent="UI"]
+unique_name_in_owner = true
+stream = ExtResource("9_45bkh")
+script = ExtResource("10_e5txq")
+
+[node name="VolumeControl" type="Panel" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 102.0
+offset_right = 4.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0rj1")
+
+[node name="VSlider" type="VSlider" parent="UI/VolumeControl"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -48.0
+offset_right = 10.0
+offset_bottom = 152.0
+mouse_default_cursor_shape = 9
+step = 0.1
+value = 0.8
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("10_ewhtw")
+
+[node name="Volume" type="Sprite2D" parent="UI/VolumeControl"]
+position = Vector2(-84, 52)
+scale = Vector2(2, 2)
+texture = ExtResource("10_vcitq")
+
+[node name="PlusSign" type="Label" parent="UI/VolumeControl"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -86.0
+offset_right = 6.0
+offset_bottom = -63.0
+scale = Vector2(4.186, 4)
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MinusSign" type="Label" parent="UI/VolumeControl"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 84.0
+offset_right = 6.0
+offset_bottom = 107.0
+scale = Vector2(4.186, 4)
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Replay" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-501, 466)
+texture = ExtResource("12_vvevf")
+
+[node name="ElapsedTime" type="Label" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 14.0
+offset_top = 472.0
+offset_right = 78.0
+offset_bottom = 495.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0:00:00"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("15_i7let")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("23_ynj3r")
+script = ExtResource("23_etdi4")
+
+[node name="Credits" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 4.0
+offset_top = 406.0
+offset_right = 503.0
+offset_bottom = 498.0
+text = "1111111111111111111111
+2222222222222222222222
+3333333333333333333333
+4444444444444444444444"
+script = ExtResource("25_mlufd")
